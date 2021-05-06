@@ -20,8 +20,21 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <p>Informacion del cuentahabiente</p>
+  <br>
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <h3>Datos personales</h3>
+          <h4>Nombre</h4>
+          <input type="text" name="nombre" placeholder="Nombre del cuentahabiente" class="form-control" value="{{ctahabiente.name}}" disabled>
+          <h4>Apellido</h4>
+          <input type="text" name="Apellido" placeholder="Apellido del cuentahabiente" class="form-control" value="{{ctahabiente.lastname}}" disabled>
+          <h4>CUI</h4>
+          <input type="text" name="CUI" placeholder="CUI del cuentahabiente" class="form-control" value="{{ctahabiente.cui}}" disabled>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="row justify-content-center">
     <div class="col-md-11">
@@ -29,6 +42,7 @@
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Fecha</th>
             <th scope="col">Banco</th>
             <th scope="col">Tipo Cuenta</th>
             <th scope="col">Tipo Transaccion</th>
@@ -39,6 +53,7 @@
           {{#each transacciones}}
           <tr>
             <th scope="row">{{@index}}</th>
+            <td>{{this.fecha_generacion}}</td>
             <td>{{this.name_inst}}</td>
             <td>{{this.tipo_cta}}</td>
             <td>{{this.tipo_transaction}}</td>
