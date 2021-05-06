@@ -1,17 +1,63 @@
-<h1>Banco</h1>
+<h1 style="text-align: center;">Banco</h1>
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-5">
-    <div class="card">
-      <div class="card-body">
-        <form action="">
-          <div class="form-group">
-            <input type="text" title="CUI cuentahbiente" placeholder="Insert el nombre del banco que desea consultar" class="form-control">
-          </div>
-          <button type="submit" class="btn btn-primary">Consultar</button>
-        </form>
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <h3>Ingrese los datos</h3>
+          <form action="/banco/total" method="POST" >
+            <div class="form-group">
+              <input type="text" name="banco" placeholder="Nombre del banco" class="form-control">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Consultar</button>
+          </form>
+        </div>
       </div>
     </div>
+  </div>
+  <br>
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <h3>Datos de la Institucion</h3>
+          <h4>Nombre</h4>
+          <input type="text" name="nombre" placeholder="Nombre del banco" class="form-control" value="{{banco.name}}" disabled>
+          <h4>Debito</h4>
+          <input type="number" name="nombre" placeholder="Nombre del banco" class="form-control" value="{{banco.debito}}" disabled>
+          <h4>Credito</h4>
+          <input type="number" name="nombre" placeholder="Nombre del banco" class="form-control" value="{{banco.credito}}" disabled>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-11">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Banco</th>
+            <th scope="col">Tipo Cuenta</th>
+            <th scope="col">Tipo Transaccion</th>
+            <th scope="col">Descripcion</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each transacciones}}
+          <tr>
+            <th scope="row">{{@index}}</th>
+            <td>{{this.fecha_generacion}}</td>
+            <td>{{this.name_inst}}</td>
+            <td>{{this.tipo_cta}}</td>
+            <td>{{this.tipo_transaction}}</td>
+            <td>{{this.description}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

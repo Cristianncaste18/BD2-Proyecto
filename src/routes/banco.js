@@ -3,6 +3,6 @@ const { indexBanco, getOperacionesBanco, getTotalesBanco } = require('../control
 
 router.get('',indexBanco)
 router.get('/operaciones',getOperacionesBanco);
-router.get('/total',getTotalesBanco);
+router.post('/total',getTotalesBanco);
 
 module.exports = router;
