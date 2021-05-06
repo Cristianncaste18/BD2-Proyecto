@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { getOperacionesCthabiente } = require('../controllers/cuentahabiente');
+const { getOperacionesCthabiente, indexCthabiente } = require('../controllers/cuentahabiente');
 
-router.get('',getOperacionesCthabiente);
+router.get('',indexCthabiente);
+router.post('',getOperacionesCthabiente);
 
 module.exports =  router;

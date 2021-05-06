@@ -1,0 +1,147 @@
+<h1 style="text-align: center;">Cuentahabiente</h1>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <h3>Ingrese los datos</h3>
+          <form action="/cuentahabiente" method="POST" >
+            <div class="form-group">
+              <input type="text" name="cui" placeholder="CUI del cuentahabiente" class="form-control">
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="text" name="mes" placeholder="Mes (opcional)" class="form-control">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Consultar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <p>Informacion del cuentahabiente</p>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-11">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Banco</th>
+            <th scope="col">Tipo Cuenta</th>
+            <th scope="col">Tipo Transaccion</th>
+            <th scope="col">Descripcion</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each transacciones}}
+          <tr>
+            <th scope="row">{{@index}}</th>
+            <td>{{this.name_inst}}</td>
+            <td>{{this.tipo_cta}}</td>
+            <td>{{this.tipo_transaction}}</td>
+            <td>{{this.description}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--div class="container-fluid">
+  <div class="row">
+    <h2>Operaciones por cuentahabiente</h2>
+    <div class="card">
+        <div class="card-body">
+          <form action="">
+            <div class="form-grup">
+              <input type="text" title="Banco" placeholder="insert" class="form-control">
+            </div>
+          </form>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="card">
+        <div class="card-body">
+          <form action="">
+            <div class="form-grup">
+              <input type="text" title="Banco" placeholder="insert">
+            </div>
+          </form>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+      <p>Resultados</p>
+  </div>
+</div>
+<!--
+/*
+  <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <form action="">
+            <div class="form-grup">
+              <input type="text" title="Banco" placeholder="insert">
+            </div>
+          </form>
+        </div>
+      </div>
+  </div>
+
+
+    <!-- Button trigger modal ->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal ->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+*/-->
