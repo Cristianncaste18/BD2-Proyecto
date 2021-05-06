@@ -31,6 +31,11 @@ async function getOperacionesCthabiente(req, res){
     res.render('cuentahabiente',{ctahabiente,transacciones})
 }
 
+async function addTransaction(req,res){
+  console.log(`REQUEST:: ${JSON.stringify(req.body,null,2)}`)
+  res.render('errorr')
+}
+
 function getLastDay(month){
   switch(parseInt(month)){
     case 1:
@@ -53,5 +58,6 @@ function getLastDay(month){
 
 module.exports = {
   indexCthabiente,
-  getOperacionesCthabiente
+  getOperacionesCthabiente,
+  addTransaction
 }
